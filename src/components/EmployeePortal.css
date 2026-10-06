@@ -1,0 +1,877 @@
+:root {
+  --employee-teal: #006D77;
+  --employee-aqua: #00B4D8;
+  --employee-salmon: #FF8A80;
+  --employee-white: #FFFFFF;
+}
+
+/* =========================================================
+   BASE
+========================================================= */
+
+.employee-portal {
+  width: 100%;
+  min-height: 100%;
+  background: var(--employee-white);
+  color: var(--employee-teal);
+  box-sizing: border-box;
+}
+
+.employee-portal *,
+.employee-portal *::before,
+.employee-portal *::after {
+  box-sizing: border-box;
+}
+
+.employee-page {
+  width: 100%;
+  background: var(--employee-white);
+}
+
+.employee-section {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.employee-detail-page {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.employee-hero {
+  width: 100%;
+  min-height: 170px;
+  border-radius: 20px;
+  padding: 30px;
+  background: linear-gradient(
+    135deg,
+    var(--employee-teal),
+    var(--employee-aqua)
+  );
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.employee-hero-content {
+  color: var(--employee-white);
+}
+
+.employee-hero-content h2 {
+  margin: 0 0 8px;
+  font-size: 28px;
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+.employee-hero-content p {
+  margin: 0;
+  color: var(--employee-white);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* =========================================================
+   STATISTICS
+========================================================= */
+
+.employee-stat-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 16px;
+}
+
+/* =========================================================
+   DASHBOARD GRID
+========================================================= */
+
+.employee-dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.employee-content-card {
+  padding: 22px;
+  background: var(--employee-white);
+  border: 1px solid var(--employee-teal);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 109, 119, 0.08);
+}
+
+.employee-card-title {
+  margin: 0 0 18px;
+  color: var(--employee-teal);
+  font-size: 18px;
+  font-weight: 800;
+}
+
+/* =========================================================
+   LISTS
+========================================================= */
+
+.employee-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.employee-list-item {
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(0, 109, 119, 0.12);
+}
+
+.employee-list-item:last-child {
+  border-bottom: none;
+}
+
+.employee-list-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.employee-alert-icon {
+  width: 38px;
+  height: 38px;
+  flex: 0 0 38px;
+  border-radius: 10px;
+  background: var(--employee-salmon);
+  color: var(--employee-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.employee-primary-text {
+  margin: 0;
+  color: var(--employee-teal);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.employee-secondary-text {
+  margin: 4px 0 0;
+  color: var(--employee-teal);
+  opacity: 0.65;
+  font-size: 12px;
+}
+
+.employee-empty-text {
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+  color: var(--employee-teal);
+  opacity: 0.65;
+  font-size: 13px;
+}
+
+/* =========================================================
+   SECTION HEADINGS
+========================================================= */
+
+.employee-section-title {
+  margin: 0;
+  color: var(--employee-teal);
+  font-size: 22px;
+  font-weight: 800;
+}
+
+/* =========================================================
+   FILTER / SEARCH
+========================================================= */
+
+.employee-filter-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.employee-search-wrapper {
+  position: relative;
+  flex: 1;
+  min-width: 260px;
+}
+
+.employee-search-full {
+  width: 100%;
+}
+
+.employee-search-icon {
+  position: absolute;
+  left: 13px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--employee-teal);
+  pointer-events: none;
+}
+
+.employee-search-input {
+  width: 100%;
+  height: 44px;
+  padding: 0 14px 0 42px;
+  background: var(--employee-white);
+  border: 1px solid var(--employee-teal);
+  border-radius: 12px;
+  outline: none;
+  color: var(--employee-teal);
+  font-size: 14px;
+}
+
+.employee-search-input::placeholder {
+  color: var(--employee-teal);
+  opacity: 0.55;
+}
+
+.employee-search-input:focus {
+  border-color: var(--employee-aqua);
+  box-shadow: 0 0 0 3px rgba(0, 180, 216, 0.15);
+}
+
+.employee-select,
+.employee-small-select {
+  background: var(--employee-white);
+  border: 1px solid var(--employee-teal);
+  border-radius: 12px;
+  color: var(--employee-teal);
+  outline: none;
+  cursor: pointer;
+}
+
+.employee-select {
+  min-width: 170px;
+  height: 44px;
+  padding: 0 14px;
+  font-size: 14px;
+}
+
+.employee-small-select {
+  min-width: 150px;
+  height: 34px;
+  padding: 0 10px;
+  font-size: 12px;
+}
+
+.employee-select:focus,
+.employee-small-select:focus {
+  border-color: var(--employee-aqua);
+  box-shadow: 0 0 0 3px rgba(0, 180, 216, 0.12);
+}
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.employee-table-card {
+  width: 100%;
+  padding: 0;
+  overflow: hidden;
+  background: var(--employee-white);
+  border: 1px solid var(--employee-teal);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 109, 119, 0.07);
+}
+
+.employee-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.employee-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--employee-white);
+  color: var(--employee-teal);
+  font-size: 14px;
+}
+
+.employee-table thead {
+  background: var(--employee-teal);
+  color: var(--employee-white);
+}
+
+.employee-table th {
+  padding: 14px 16px;
+  text-align: left;
+  white-space: nowrap;
+  font-weight: 700;
+  border-bottom: 1px solid var(--employee-teal);
+}
+
+.employee-table td {
+  padding: 14px 16px;
+  color: var(--employee-teal);
+  border-bottom: 1px solid rgba(0, 109, 119, 0.12);
+  vertical-align: middle;
+}
+
+.employee-table tbody tr {
+  background: var(--employee-white);
+  transition: background 0.2s ease;
+}
+
+.employee-table tbody tr:hover {
+  background: rgba(0, 180, 216, 0.06);
+}
+
+.employee-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.employee-table .center {
+  text-align: center;
+}
+
+.employee-primary-cell {
+  font-weight: 700;
+}
+
+.employee-mono {
+  font-family: Consolas, Monaco, monospace;
+  letter-spacing: 0.2px;
+}
+
+/* =========================================================
+   BUTTONS / LINKS
+========================================================= */
+
+.employee-view-button,
+.employee-back-button {
+  border: none;
+  background: transparent;
+  color: var(--employee-aqua);
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.employee-view-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.employee-view-button:hover,
+.employee-back-button:hover {
+  color: var(--employee-teal);
+  text-decoration: underline;
+}
+
+.employee-back-button {
+  width: fit-content;
+  padding: 4px 0;
+}
+
+.employee-button-content {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+}
+
+/* =========================================================
+   DETAIL CARD
+========================================================= */
+
+.employee-detail-card {
+  width: 100%;
+  padding: 26px;
+  background: var(--employee-white);
+  border: 1px solid var(--employee-teal);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 109, 119, 0.08);
+}
+
+.employee-detail-title {
+  margin: 0 0 22px;
+  color: var(--employee-teal);
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.employee-info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px 24px;
+}
+
+.employee-info-item {
+  min-width: 0;
+}
+
+.employee-info-label {
+  margin: 0 0 5px;
+  color: var(--employee-teal);
+  opacity: 0.58;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.employee-info-value {
+  margin: 0;
+  color: var(--employee-teal);
+  font-size: 14px;
+  font-weight: 700;
+  word-break: break-word;
+}
+
+/* =========================================================
+   ACTION ROW
+========================================================= */
+
+.employee-action-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+.employee-disburse-action {
+  margin-top: 18px;
+}
+
+/* =========================================================
+   SERVICE REQUESTS
+========================================================= */
+
+.employee-request-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.employee-request-card {
+  padding: 20px;
+  background: var(--employee-white);
+  border: 1px solid var(--employee-teal);
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 109, 119, 0.06);
+}
+
+.employee-request-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.employee-request-title-row {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  flex-wrap: wrap;
+}
+
+.employee-request-title {
+  margin: 0;
+  color: var(--employee-teal);
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.employee-meta-text {
+  margin: 5px 0 0;
+  color: var(--employee-teal);
+  opacity: 0.6;
+  font-size: 12px;
+}
+
+.employee-description {
+  margin: 15px 0 0;
+  color: var(--employee-teal);
+  opacity: 0.8;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.employee-request-footer {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(0, 109, 119, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+/* =========================================================
+   LOANS
+========================================================= */
+
+.employee-loan-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.employee-loan-card {
+  padding: 22px;
+  background: var(--employee-white);
+  border: 1px solid var(--employee-teal);
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 109, 119, 0.06);
+}
+
+.employee-loan-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.employee-loan-title {
+  margin: 0 0 5px;
+  color: var(--employee-teal);
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.employee-loan-details {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.employee-detail-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  color: var(--employee-teal);
+  font-size: 14px;
+}
+
+.employee-detail-row span {
+  opacity: 0.6;
+}
+
+.employee-detail-row strong {
+  color: var(--employee-teal);
+  font-weight: 800;
+}
+
+/* =========================================================
+   FRAUD
+========================================================= */
+
+.employee-fraud-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+.employee-fraud-warning {
+  margin-bottom: 22px;
+  padding: 17px;
+  background: var(--employee-salmon);
+  border: 1px solid var(--employee-salmon);
+  border-radius: 14px;
+  color: var(--employee-white);
+}
+
+.employee-fraud-warning-title {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 8px;
+}
+
+.employee-fraud-warning-title p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.employee-fraud-warning-text {
+  margin: 0;
+  color: var(--employee-white);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.employee-fraud-actions {
+  margin-top: 22px;
+}
+
+.employee-fraud-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.employee-fraud-card {
+  padding: 20px;
+  background: var(--employee-white);
+  border: 1px solid var(--employee-teal);
+  border-left: 5px solid var(--employee-teal);
+  border-radius: 15px;
+  box-shadow: 0 6px 18px rgba(0, 109, 119, 0.06);
+}
+
+.employee-fraud-card.high {
+  border-left-color: var(--employee-salmon);
+}
+
+.employee-fraud-card.medium {
+  border-left-color: var(--employee-aqua);
+}
+
+.employee-fraud-card.low {
+  border-left-color: var(--employee-teal);
+}
+
+.employee-fraud-card-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.employee-fraud-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  min-width: 0;
+}
+
+.employee-fraud-icon {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  border-radius: 11px;
+  background: var(--employee-aqua);
+  color: var(--employee-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.employee-fraud-card.high .employee-fraud-icon {
+  background: var(--employee-salmon);
+}
+
+.employee-fraud-card.low .employee-fraud-icon {
+  background: var(--employee-teal);
+}
+
+.employee-fraud-title {
+  margin: 0 0 4px;
+  color: var(--employee-teal);
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.employee-fraud-score-area {
+  min-width: 95px;
+  text-align: right;
+}
+
+.employee-fraud-score {
+  margin: 0;
+  color: var(--employee-salmon);
+  font-size: 28px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.employee-fraud-card.medium .employee-fraud-score {
+  color: var(--employee-aqua);
+}
+
+.employee-fraud-card.low .employee-fraud-score {
+  color: var(--employee-teal);
+}
+
+.employee-score-label {
+  margin: 5px 0 7px;
+  color: var(--employee-teal);
+  opacity: 0.55;
+  font-size: 11px;
+}
+
+/* =========================================================
+   BADGE SAFETY
+========================================================= */
+
+/*
+   Existing Badge component may contain Tailwind colors.
+   These rules keep the Employee Portal visually aligned.
+*/
+
+.employee-portal [class*="badge"] {
+  font-weight: 700;
+}
+
+/* =========================================================
+   LOADING / EMPTY AREAS
+========================================================= */
+
+.employee-portal > div {
+  width: 100%;
+}
+
+.employee-portal button {
+  font-family: inherit;
+}
+
+/* =========================================================
+   RESPONSIVE - 1200
+========================================================= */
+
+@media (max-width: 1200px) {
+  .employee-stat-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* =========================================================
+   RESPONSIVE - 900
+========================================================= */
+
+@media (max-width: 900px) {
+  .employee-dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .employee-loan-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .employee-stat-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .employee-info-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE - 650
+========================================================= */
+
+@media (max-width: 650px) {
+  .employee-hero {
+    min-height: 150px;
+    padding: 22px;
+    border-radius: 15px;
+  }
+
+  .employee-hero-content h2 {
+    font-size: 22px;
+  }
+
+  .employee-stat-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .employee-filter-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .employee-search-wrapper {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .employee-select {
+    width: 100%;
+  }
+
+  .employee-request-header {
+    flex-direction: column;
+  }
+
+  .employee-request-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .employee-small-select {
+    width: 100%;
+  }
+
+  .employee-fraud-card-content {
+    flex-direction: column;
+  }
+
+  .employee-fraud-score-area {
+    width: 100%;
+    text-align: left;
+  }
+
+  .employee-fraud-score {
+    font-size: 24px;
+  }
+
+  .employee-fraud-header {
+    flex-direction: column;
+  }
+
+  .employee-detail-card {
+    padding: 18px;
+  }
+
+  .employee-action-row {
+    align-items: stretch;
+    flex-direction: column;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE - 420
+========================================================= */
+
+@media (max-width: 420px) {
+  .employee-hero {
+    padding: 18px;
+  }
+
+  .employee-hero-content h2 {
+    font-size: 19px;
+  }
+
+  .employee-hero-content p {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  .employee-content-card,
+  .employee-request-card,
+  .employee-loan-card,
+  .employee-fraud-card {
+    padding: 16px;
+  }
+
+  .employee-section-title {
+    font-size: 19px;
+  }
+
+  .employee-detail-title {
+    font-size: 18px;
+  }
+
+  .employee-table {
+    min-width: 700px;
+  }
+}

@@ -1,0 +1,498 @@
+:root {
+  --teal: #006D77;
+  --mint: #83C5BE;
+  --aqua: #00B4D8;
+  --salmon: #FF8A80;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.ui-card {
+  background: var(--mint);
+  border: 2px solid var(--teal);
+  border-radius: 16px;
+
+  box-shadow: 0 5px 16px rgba(0, 109, 119, 0.12);
+
+  color: var(--teal);
+}
+
+.ui-card:hover {
+  box-shadow: 0 8px 22px rgba(0, 109, 119, 0.18);
+}
+
+/* =========================
+   STAT CARD
+========================= */
+
+.ui-stat-card {
+  padding: 20px;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.ui-stat-card:hover {
+  transform: translateY(-2px);
+}
+
+.ui-stat-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.ui-stat-info {
+  min-width: 0;
+}
+
+.ui-stat-label {
+  margin: 0 0 5px;
+
+  color: var(--teal);
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.ui-stat-value {
+  margin: 0;
+
+  color: var(--teal);
+
+  font-size: 27px;
+  font-weight: 900;
+  line-height: 1.15;
+}
+
+.ui-stat-subtext {
+  margin: 5px 0 0;
+
+  color: var(--teal);
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.ui-stat-icon {
+  width: 44px;
+  height: 44px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 2px solid var(--teal);
+  border-radius: 11px;
+
+  /*
+    The inline color passed by the page is retained
+    for icon identity, while the background remains
+    within the four-color banking palette.
+  */
+  color: var(--teal);
+}
+
+/* =========================
+   BADGES
+========================= */
+
+.ui-badge {
+  display: inline-block;
+
+  padding: 4px 10px;
+
+  border: 2px solid var(--teal);
+  border-radius: 999px;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  line-height: 1.2;
+}
+
+/* Success */
+.ui-badge-green {
+  background: var(--mint);
+  color: var(--teal);
+}
+
+/* Pending */
+.ui-badge-yellow {
+  background: var(--aqua);
+  color: var(--teal);
+}
+
+/* Danger */
+.ui-badge-red {
+  background: var(--salmon);
+  color: var(--teal);
+}
+
+/* Informational */
+.ui-badge-blue {
+  background: var(--aqua);
+  color: var(--teal);
+}
+
+/* Neutral */
+.ui-badge-gray {
+  background: var(--mint);
+  color: var(--teal);
+}
+
+/* =========================
+   LOADING
+========================= */
+
+.ui-loading {
+  min-height: 120px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  padding: 30px 12px;
+
+  color: var(--teal);
+}
+
+.ui-loading-icon {
+  flex-shrink: 0;
+
+  color: var(--aqua);
+
+  animation: ui-spin 0.9s linear infinite;
+}
+
+.ui-loading-text {
+  color: var(--teal);
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+@keyframes ui-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================
+   EMPTY STATE
+========================= */
+
+.ui-empty-state {
+  padding: 48px 20px;
+
+  text-align: center;
+}
+
+.ui-empty-icon {
+  width: 64px;
+  height: 64px;
+
+  margin: 0 auto 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 2px solid var(--teal);
+  border-radius: 16px;
+
+  background: var(--aqua);
+  color: var(--teal);
+}
+
+.ui-empty-title {
+  margin: 0 0 5px;
+
+  color: var(--teal);
+
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.ui-empty-message {
+  margin: 0;
+
+  color: var(--teal);
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* =========================
+   PAGINATION
+========================= */
+
+.ui-pagination {
+  margin-top: 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.ui-pagination-button {
+  padding: 8px 13px;
+
+  border: 2px solid var(--teal);
+  border-radius: 9px;
+
+  background: var(--mint);
+  color: var(--teal);
+
+  font-size: 12px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.ui-pagination-button:hover:not(:disabled) {
+  background: var(--aqua);
+  transform: translateY(-1px);
+}
+
+.ui-pagination-button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.ui-pagination-info {
+  color: var(--teal);
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+/* =========================
+   FORM FIELD
+========================= */
+
+.ui-field {
+  width: 100%;
+}
+
+.ui-label {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: var(--teal);
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.ui-required {
+  margin-left: 3px;
+
+  color: var(--salmon);
+
+  font-size: 14px;
+}
+
+/* =========================
+   INPUT
+========================= */
+
+.ui-input {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 10px 13px;
+
+  border: 2px solid var(--teal);
+  border-radius: 11px;
+
+  outline: none;
+
+  background: var(--mint);
+  color: var(--teal);
+
+  font-family: inherit;
+  font-size: 13px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.ui-input::placeholder {
+  color: var(--teal);
+  opacity: 0.7;
+}
+
+.ui-input:focus {
+  border-color: var(--aqua);
+
+  box-shadow:
+    0 0 0 3px rgba(0, 180, 216, 0.18);
+}
+
+/* =========================
+   SELECT
+========================= */
+
+.ui-select {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 10px 13px;
+
+  border: 2px solid var(--teal);
+  border-radius: 11px;
+
+  outline: none;
+
+  background: var(--mint);
+  color: var(--teal);
+
+  font-family: inherit;
+  font-size: 13px;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.ui-select:focus {
+  border-color: var(--aqua);
+
+  box-shadow:
+    0 0 0 3px rgba(0, 180, 216, 0.18);
+}
+
+.ui-select option {
+  background: var(--mint);
+  color: var(--teal);
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.ui-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  min-height: 40px;
+
+  padding: 10px 20px;
+
+  border: 2px solid var(--teal);
+  border-radius: 11px;
+
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.ui-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.ui-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Primary */
+.ui-button-primary {
+  background: var(--teal);
+  color: var(--mint);
+}
+
+.ui-button-primary:hover:not(:disabled) {
+  background: var(--aqua);
+  color: var(--teal);
+}
+
+/* Secondary */
+.ui-button-secondary {
+  background: var(--mint);
+  color: var(--teal);
+}
+
+.ui-button-secondary:hover:not(:disabled) {
+  background: var(--aqua);
+}
+
+/* Danger */
+.ui-button-danger {
+  background: var(--salmon);
+  color: var(--teal);
+}
+
+.ui-button-danger:hover:not(:disabled) {
+  background: var(--aqua);
+}
+
+/* Accent */
+.ui-button-accent {
+  background: var(--aqua);
+  color: var(--teal);
+}
+
+.ui-button-accent:hover:not(:disabled) {
+  background: var(--salmon);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 600px) {
+  .ui-stat-card {
+    padding: 16px;
+  }
+
+  .ui-stat-value {
+    font-size: 23px;
+  }
+
+  .ui-stat-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .ui-pagination {
+    gap: 7px;
+  }
+
+  .ui-pagination-info {
+    font-size: 11px;
+  }
+
+  .ui-button {
+    padding: 9px 15px;
+  }
+}

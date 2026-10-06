@@ -1,0 +1,1190 @@
+/* =========================================================
+   ADMIN PORTAL
+   Custom CSS - Tailwind Independent
+   Colors:
+   Teal  #006D77
+   Mint  #83C5BE
+   Aqua  #00B4D8
+   Salmon #FF8A80
+   White #FFFFFF
+   ========================================================= */
+
+:root {
+  --admin-teal: #006D77;
+  --admin-mint: #83C5BE;
+  --admin-aqua: #00B4D8;
+  --admin-salmon: #FF8A80;
+  --admin-white: #FFFFFF;
+
+  --admin-radius: 16px;
+  --admin-radius-small: 10px;
+  --admin-shadow: 0 8px 24px rgba(0, 109, 119, 0.10);
+  --admin-shadow-hover: 0 14px 32px rgba(0, 109, 119, 0.16);
+}
+
+
+/* =========================================================
+   MAIN PORTAL
+   ========================================================= */
+
+.admin-portal {
+  width: 100%;
+  min-height: 100%;
+  background: var(--admin-white);
+  color: var(--admin-teal);
+  box-sizing: border-box;
+}
+
+.admin-portal *,
+.admin-portal *::before,
+.admin-portal *::after {
+  box-sizing: border-box;
+}
+
+.admin-page {
+  width: 100%;
+  padding: 4px;
+  background: var(--admin-white);
+}
+
+.admin-section {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.admin-dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+
+/* =========================================================
+   SECTION TITLES
+   ========================================================= */
+
+.admin-section-title {
+  margin: 0;
+  color: var(--admin-teal);
+  font-size: 20px;
+  line-height: 1.3;
+  font-weight: 800;
+  letter-spacing: -0.2px;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.admin-hero {
+  width: 100%;
+  min-height: 190px;
+  padding: 28px;
+  border-radius: 20px;
+  background:
+    linear-gradient(
+      110deg,
+      var(--admin-teal) 0%,
+      var(--admin-aqua) 52%,
+      var(--admin-mint) 100%
+    );
+  box-shadow: var(--admin-shadow);
+  overflow: hidden;
+  position: relative;
+}
+
+.admin-hero::after {
+  content: "";
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  right: -70px;
+  top: -100px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  pointer-events: none;
+}
+
+.admin-hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.admin-hero h2 {
+  margin: 0 0 7px;
+  color: var(--admin-white);
+  font-size: 28px;
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+.admin-hero p {
+  margin: 0;
+  color: var(--admin-white);
+  font-size: 14px;
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+
+/* =========================================================
+   TIME FILTER
+   ========================================================= */
+
+.admin-time-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 22px;
+}
+
+.admin-time-button {
+  min-height: 38px;
+  padding: 8px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--admin-white);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.admin-time-button:hover {
+  background: rgba(255, 255, 255, 0.22);
+  transform: translateY(-1px);
+}
+
+.admin-time-button.active {
+  background: var(--admin-white);
+  color: var(--admin-teal);
+  border-color: var(--admin-white);
+}
+
+
+/* =========================================================
+   STAT CARDS
+   ========================================================= */
+
+.admin-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 16px;
+  width: 100%;
+}
+
+.admin-stat-grid > * {
+  min-width: 0;
+  min-height: 132px;
+}
+
+
+/* =========================================================
+   ANALYTICS
+   ========================================================= */
+
+.admin-analytics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+.admin-analytics-card {
+  min-width: 0;
+  min-height: 300px;
+  padding: 22px;
+  border: 1px solid var(--admin-mint);
+  border-radius: var(--admin-radius);
+  background: var(--admin-white);
+  box-shadow: var(--admin-shadow);
+  overflow: hidden;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.admin-analytics-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--admin-shadow-hover);
+}
+
+.admin-analytics-card h3 {
+  margin: 0 0 20px;
+  color: var(--admin-teal);
+  font-size: 17px;
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   BAR CHARTS
+   ========================================================= */
+
+.admin-bar-list {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+
+.admin-bar-item {
+  width: 100%;
+}
+
+.admin-bar-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 7px;
+  color: var(--admin-teal);
+  font-size: 13px;
+}
+
+.admin-bar-label span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.admin-bar-label strong {
+  color: var(--admin-teal);
+  font-weight: 800;
+}
+
+.admin-bar-track {
+  width: 100%;
+  height: 9px;
+  border-radius: 999px;
+  background: rgba(131, 197, 190, 0.30);
+  overflow: hidden;
+}
+
+.admin-bar-fill {
+  height: 100%;
+  min-width: 3px;
+  border-radius: 999px;
+  transition: width 0.45s ease;
+}
+
+.admin-bar-fill.teal {
+  background: var(--admin-teal);
+}
+
+
+/* =========================================================
+   STATUS DONUT CHART
+   ========================================================= */
+
+.admin-status-chart {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 22px;
+  min-height: 205px;
+  width: 100%;
+  overflow-x: auto;
+}
+
+.admin-status-item {
+  flex: 0 0 auto;
+  min-width: 105px;
+  text-align: center;
+}
+
+.admin-status-ring {
+  width: 104px;
+  height: 104px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.admin-status-ring svg {
+  display: block;
+  width: 104px;
+  height: 104px;
+  transform: rotate(-90deg);
+}
+
+.admin-status-value {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--admin-teal);
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.admin-status-item p {
+  margin: 9px 0 0;
+  color: var(--admin-teal);
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   RISK CHART
+   ========================================================= */
+
+.admin-risk-chart {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  gap: 20px;
+  min-height: 205px;
+  width: 100%;
+}
+
+.admin-risk-item {
+  min-width: 80px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+}
+
+.admin-risk-count {
+  color: var(--admin-teal);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.admin-risk-bar-area {
+  width: 100%;
+  max-width: 82px;
+  height: 120px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.admin-risk-bar {
+  width: 100%;
+  min-height: 4px;
+  border-radius: 9px 9px 3px 3px;
+  transition: height 0.45s ease;
+}
+
+.admin-risk-label {
+  color: var(--admin-teal);
+  font-size: 11px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.admin-risk-percent {
+  color: var(--admin-aqua);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   SEARCH
+   ========================================================= */
+
+.admin-search-wrapper {
+  width: 100%;
+  position: relative;
+}
+
+.admin-search-input {
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 15px;
+  border: 1px solid var(--admin-mint);
+  border-radius: 11px;
+  outline: none;
+  background: var(--admin-white);
+  color: var(--admin-teal);
+  font-size: 14px;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.admin-search-input::placeholder {
+  color: var(--admin-mint);
+}
+
+.admin-search-input:focus {
+  border-color: var(--admin-aqua);
+  box-shadow: 0 0 0 3px rgba(0, 180, 216, 0.14);
+}
+
+
+/* =========================================================
+   TABLE CARD
+   ========================================================= */
+
+.admin-table-card {
+  width: 100%;
+  padding: 0;
+  border: 1px solid var(--admin-mint);
+  border-radius: var(--admin-radius);
+  background: var(--admin-white);
+  box-shadow: var(--admin-shadow);
+  overflow: hidden;
+}
+
+.admin-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.admin-table {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: collapse;
+  background: var(--admin-white);
+  color: var(--admin-teal);
+  font-size: 13px;
+}
+
+.admin-table thead {
+  background: var(--admin-teal);
+}
+
+.admin-table th {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--admin-teal);
+  color: var(--admin-white);
+  font-size: 12px;
+  font-weight: 800;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.admin-table th.center,
+.admin-table td.center {
+  text-align: center;
+}
+
+.admin-table th.right,
+.admin-table td.right {
+  text-align: right;
+}
+
+.admin-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid rgba(131, 197, 190, 0.35);
+  color: var(--admin-teal);
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.admin-table tbody tr {
+  background: var(--admin-white);
+  transition: background 0.2s ease;
+}
+
+.admin-table tbody tr:hover {
+  background: rgba(131, 197, 190, 0.14);
+}
+
+.admin-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.admin-table .primary-text {
+  color: var(--admin-teal);
+  font-weight: 700;
+}
+
+.admin-table .mono {
+  color: var(--admin-aqua);
+  font-family: monospace;
+  font-size: 12px;
+}
+
+.admin-table .amount-credit {
+  color: var(--admin-teal);
+  font-weight: 800;
+}
+
+.admin-table .amount-debit {
+  color: var(--admin-salmon);
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   RISK COLORS
+   ========================================================= */
+
+.risk-low {
+  color: var(--admin-teal);
+  font-weight: 800;
+}
+
+.risk-medium {
+  color: var(--admin-aqua);
+  font-weight: 800;
+}
+
+.risk-high {
+  color: var(--admin-salmon);
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   EMPLOYEE / BRANCH CARDS
+   ========================================================= */
+
+.admin-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  width: 100%;
+}
+
+.admin-person-card {
+  min-width: 0;
+  min-height: 220px;
+  padding: 20px;
+  border: 1px solid var(--admin-mint);
+  border-radius: var(--admin-radius);
+  background: var(--admin-white);
+  box-shadow: var(--admin-shadow);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.admin-person-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--admin-aqua);
+  box-shadow: var(--admin-shadow-hover);
+}
+
+.admin-person-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.admin-person-info {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.admin-avatar {
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--admin-aqua);
+  color: var(--admin-white);
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.admin-person-info h4,
+.admin-person-header h4 {
+  margin: 0;
+  color: var(--admin-teal);
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.admin-code {
+  margin: 4px 0 0;
+  color: var(--admin-aqua);
+  font-family: monospace;
+  font-size: 11px;
+}
+
+.admin-detail-list {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  color: var(--admin-teal);
+  font-size: 13px;
+}
+
+.admin-detail-list p {
+  margin: 0;
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+.admin-detail-list p span {
+  color: var(--admin-mint);
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   BRANCH SERVICES
+   ========================================================= */
+
+.admin-service-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.admin-service-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 9px;
+  border: 1px solid rgba(131, 197, 190, 0.45);
+  border-radius: 999px;
+  background: rgba(131, 197, 190, 0.18);
+  color: var(--admin-teal);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   SELECT
+   ========================================================= */
+
+.admin-select {
+  width: fit-content;
+  min-width: 190px;
+  min-height: 43px;
+  padding: 9px 35px 9px 13px;
+  border: 1px solid var(--admin-mint);
+  border-radius: 10px;
+  outline: none;
+  background: var(--admin-white);
+  color: var(--admin-teal);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.admin-select:focus {
+  border-color: var(--admin-aqua);
+  box-shadow: 0 0 0 3px rgba(0, 180, 216, 0.12);
+}
+
+
+/* =========================================================
+   FRAUD
+   ========================================================= */
+
+.admin-fraud-summary {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  width: 100%;
+}
+
+.admin-fraud-list {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.admin-fraud-card {
+  width: 100%;
+  padding: 17px 18px;
+  border: 1px solid var(--admin-mint);
+  border-left: 5px solid var(--admin-teal);
+  border-radius: var(--admin-radius-small);
+  background: var(--admin-white);
+  box-shadow: var(--admin-shadow);
+}
+
+.admin-fraud-card.high {
+  border-left-color: var(--admin-salmon);
+}
+
+.admin-fraud-card.medium {
+  border-left-color: var(--admin-aqua);
+}
+
+.admin-fraud-card.low {
+  border-left-color: var(--admin-teal);
+}
+
+.admin-fraud-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.admin-fraud-info {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.admin-fraud-icon {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.admin-fraud-icon.high {
+  background: rgba(255, 138, 128, 0.18);
+  color: var(--admin-salmon);
+}
+
+.admin-fraud-icon.medium {
+  background: rgba(0, 180, 216, 0.14);
+  color: var(--admin-aqua);
+}
+
+.admin-fraud-icon.low {
+  background: rgba(131, 197, 190, 0.20);
+  color: var(--admin-teal);
+}
+
+.admin-fraud-title {
+  margin: 0 0 4px;
+  color: var(--admin-teal);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.admin-fraud-meta {
+  margin: 0;
+  color: var(--admin-mint);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.admin-fraud-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+.admin-fraud-score {
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.admin-fraud-score.high {
+  color: var(--admin-salmon);
+}
+
+.admin-fraud-score.medium {
+  color: var(--admin-aqua);
+}
+
+.admin-fraud-score.low {
+  color: var(--admin-teal);
+}
+
+
+/* =========================================================
+   REPORTS
+   ========================================================= */
+
+.admin-reports {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.admin-report-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.admin-report-card,
+.admin-system-card {
+  min-width: 0;
+  padding: 22px;
+  border: 1px solid var(--admin-mint);
+  border-radius: var(--admin-radius);
+  background: var(--admin-white);
+  box-shadow: var(--admin-shadow);
+}
+
+.admin-report-card h4,
+.admin-system-card h4 {
+  margin: 0 0 18px;
+  color: var(--admin-teal);
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.admin-report-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.admin-report-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding-bottom: 11px;
+  border-bottom: 1px solid rgba(131, 197, 190, 0.28);
+  font-size: 13px;
+}
+
+.admin-report-row:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.admin-report-row > span {
+  color: var(--admin-mint);
+  font-weight: 600;
+}
+
+.admin-report-row .report-value {
+  color: var(--admin-teal);
+  font-weight: 800;
+  text-align: right;
+}
+
+.admin-report-row .report-value.success {
+  color: var(--admin-teal);
+}
+
+.admin-report-row .report-value.warning {
+  color: var(--admin-aqua);
+}
+
+.admin-report-row .report-value.danger {
+  color: var(--admin-salmon);
+}
+
+
+/* =========================================================
+   SYSTEM SUMMARY
+   ========================================================= */
+
+.admin-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.admin-summary-item {
+  min-height: 150px;
+  padding: 20px;
+  border: 1px solid var(--admin-mint);
+  border-radius: 14px;
+  background: var(--admin-white);
+  text-align: center;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.admin-summary-item:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--admin-shadow);
+}
+
+.admin-summary-item svg {
+  margin: 0 auto 10px;
+}
+
+.admin-summary-item.teal {
+  border-top: 4px solid var(--admin-teal);
+}
+
+.admin-summary-item.teal svg,
+.admin-summary-item.teal .admin-summary-value {
+  color: var(--admin-teal);
+}
+
+.admin-summary-item.mint {
+  border-top: 4px solid var(--admin-mint);
+}
+
+.admin-summary-item.mint svg,
+.admin-summary-item.mint .admin-summary-value {
+  color: var(--admin-teal);
+}
+
+.admin-summary-item.aqua {
+  border-top: 4px solid var(--admin-aqua);
+}
+
+.admin-summary-item.aqua svg,
+.admin-summary-item.aqua .admin-summary-value {
+  color: var(--admin-aqua);
+}
+
+.admin-summary-item.salmon {
+  border-top: 4px solid var(--admin-salmon);
+}
+
+.admin-summary-item.salmon svg,
+.admin-summary-item.salmon .admin-summary-value {
+  color: var(--admin-salmon);
+}
+
+.admin-summary-value {
+  margin: 0;
+  font-size: 27px;
+  line-height: 1.2;
+  font-weight: 900;
+}
+
+.admin-summary-label {
+  margin: 7px 0 0;
+  color: var(--admin-mint);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   BADGE OVERRIDE
+   Keeps badge component but removes unwanted colors
+   ========================================================= */
+
+.admin-portal [class*="badge"] {
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   LOADING / EMPTY STATES
+   ========================================================= */
+
+.admin-portal > * {
+  max-width: 100%;
+}
+
+.admin-portal svg {
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   RESPONSIVE - LARGE TABLETS
+   ========================================================= */
+
+@media (max-width: 1200px) {
+  .admin-stat-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .admin-card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .admin-fraud-summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .admin-stat-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .admin-analytics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-report-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-summary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .admin-hero {
+    padding: 23px;
+  }
+
+  .admin-hero h2 {
+    font-size: 24px;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+  .admin-page {
+    padding: 0;
+  }
+
+  .admin-dashboard {
+    gap: 17px;
+  }
+
+  .admin-section {
+    gap: 14px;
+  }
+
+  .admin-stat-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .admin-stat-grid > * {
+    min-height: 115px;
+  }
+
+  .admin-card-grid {
+    grid-template-columns: 1fr;
+    gap: 13px;
+  }
+
+  .admin-fraud-summary {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .admin-summary-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .admin-hero {
+    min-height: auto;
+    padding: 20px;
+    border-radius: 15px;
+  }
+
+  .admin-hero h2 {
+    font-size: 21px;
+  }
+
+  .admin-hero p {
+    font-size: 12px;
+  }
+
+  .admin-time-filter {
+    gap: 6px;
+    margin-top: 17px;
+  }
+
+  .admin-time-button {
+    padding: 7px 10px;
+    font-size: 11px;
+  }
+
+  .admin-analytics-card {
+    padding: 17px;
+    border-radius: 13px;
+  }
+
+  .admin-status-chart {
+    justify-content: flex-start;
+    padding: 4px 3px 10px;
+  }
+
+  .admin-risk-chart {
+    gap: 10px;
+  }
+
+  .admin-risk-item {
+    min-width: 65px;
+  }
+
+  .admin-risk-bar-area {
+    max-width: 60px;
+  }
+
+  .admin-person-card {
+    padding: 16px;
+  }
+
+  .admin-person-header {
+    gap: 9px;
+  }
+
+  .admin-fraud-content {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .admin-fraud-right {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .admin-report-card,
+  .admin-system-card {
+    padding: 17px;
+  }
+
+  .admin-section-title {
+    font-size: 18px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 400px) {
+  .admin-hero h2 {
+    font-size: 19px;
+  }
+
+  .admin-time-button {
+    flex: 1;
+    min-width: 70px;
+  }
+
+  .admin-status-ring {
+    width: 88px;
+    height: 88px;
+  }
+
+  .admin-status-ring svg {
+    width: 88px;
+    height: 88px;
+  }
+
+  .admin-status-item {
+    min-width: 90px;
+  }
+
+  .admin-status-value {
+    font-size: 16px;
+  }
+
+  .admin-risk-label,
+  .admin-risk-percent {
+    font-size: 9px;
+  }
+}
